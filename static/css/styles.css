@@ -1,0 +1,494 @@
+body {
+    background-color: #032A50;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    margin-top: 0.0cm;
+}
+
+h1 {
+    font-size: 32pt;
+    color: #7d7676;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(10, 14, 52, 0.75); /* Добавляем тень к тексту */
+}
+
+
+.auth-module {
+    width: 15cm;
+    height: 10cm;
+    background-color: rgba(49, 65, 100, 0.3);
+    box-shadow: 2px 2px 5px rgba(10, 14, 52, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frame1 {
+    width: 5.6cm;
+    height: 10cm;
+    background-image: url('../images/screen_shot1.jpg');
+    background-size: cover;
+}
+
+.frame2 {
+    width: 9.4cm;
+    height: 10cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 3.5cm;
+    height: 1cm;
+    background-color: #060d5c;
+    color: #7d7676;
+    box-shadow: 2px 2px 5px rgba(5, 14, 67, 0.75);
+    font-size: 10pt;
+    text-transform: uppercase;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #252a5e;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 5cm;
+    height: 0.6cm;
+    margin: 5px;
+    padding: 5px;
+    font-size: 10pt;
+    background-color: #ffffff; /* Цвет поля ввода */
+    color: #7d7676; /* Цвет текста в поле ввода */
+    border: none;
+    border-radius: 2px;
+}
+
+.password-container {
+    position: relative;
+    width: 4.35cm;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 30px; /* Добавляем отступ справа для иконки */
+}
+
+.password-container i {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+/* Стили для страницы "Проекты" */
+
+.projects-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar {
+    width: 8.0cm;
+    background-color: #032A50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    margin-top: 0.0cm;
+}
+
+.logo img {
+    width: 6cm;
+}
+
+.menu {
+    margin-top: 0cm;
+    margin-left: 0.5cm;
+    width: 100%;
+}
+
+.menu-section {
+    margin-bottom: 0.0cm;
+}
+
+.menu-header {
+    font-size: 10pt;
+    font-weight: bold;
+    color: #7d7676;
+    margin-bottom: 0.2cm; /* Уменьшение нижнего отступа */
+    line-height: 0.5; /* Уменьшение межстрочного интервала */
+    text-align: center; /* Центрируем заголовки */
+}
+
+/* Общие стили для секций меню */
+.menu-section {
+    margin-bottom: 0.5cm; /* Расстояние между группами меню */
+}
+
+/* Заголовки секций меню */
+.menu-header {
+    font-size: 10pt;
+    font-weight: bold;
+    color: #7d7676;
+    margin-bottom: 0.5cm; /* Отступ под заголовком */
+    text-align: left;
+    margin-left: 1cm; /* Отступ слева 1 см */
+}
+
+/* Рамки для каждой группы меню */
+.group-1, .group-2, .group-3 {
+    padding: 0.3cm; /* Внутренний отступ */
+    border: 1pt solid #7d7676; /* Рамка вокруг группы */
+    border-radius: 5px; /* Скругление углов рамки */
+}
+
+/* Элементы меню */
+.menu-item {
+    font-size: 10pt;
+    color: #97988e;
+    margin-bottom: 0.3cm; /* Отступ между элементами внутри группы */
+    padding: 0.3cm;
+    line-height: 0.0; /* Межстрочный интервал для заголовков в две строки */
+    text-align: left;
+    word-break: break-word; /* Перенос слов, если необходимо */
+}
+
+.menu-item a {
+    color: inherit; /* Наследуем цвет текста от родительского элемента */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.menu-item a:hover {
+    color: #ffffff; /* Цвет текста при наведении */
+    background-color: #032A50; /* Подсветка фона */
+    transition: 0.3s ease; /* Плавный переход */
+}
+
+.header {
+    position: fixed; /* Фиксируем заголовок в верхней части страницы */
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #032A50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1cm;
+    height: 1.5cm; /* Устанавливаем высоту заголовка */
+    z-index: 1000; /* Убедитесь, что заголовок находится поверх других элементов */
+}
+
+@font-face {
+    font-family: 'DS-Digital';
+    src: url('../fonts/DS-DIGIB.TTF') format('truetype');
+}
+
+.time {
+    font-family: 'DS-Digital', sans-serif;
+    font-size: 22pt;
+    color: #b0b0a8;
+    position: absolute;
+    left: calc(50% + 3cm);
+    transform: translateX(-50%);
+}
+
+.date {
+    font-family: 'DS-Digital', sans-serif;
+    font-size: 14pt;
+    color: #b0b0a8;
+    margin-left: 10px; /* Отступ между временем и датой */
+    position: static; /* Убираем абсолютное позиционирование */
+}
+
+.day-of-week {
+    font-family: 'DS-Digital', sans-serif;
+    font-size: 14pt; /* Чуть меньше размера шрифта для визуального различия */
+    color: #b0b0a8; /* Цвет чуть светлее */
+    margin-left: 10px; /* Отступ между датой и языковым модулем*/
+    margin-top: 2px; /* Отступ сверху для разделения с датой */
+}
+
+
+
+/* Стили для основного модуля профиля */
+.user-profile {
+    position: relative;
+    margin-left: auto;
+}
+
+.user-logo {
+    width: 1cm;
+    height: 1cm;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7d7676; /* Серый фон для иконки профиля */
+    cursor: pointer;
+}
+
+.user-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/* Адаптивное заполнение изображения */
+}
+
+#language-selector {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10pt;
+    color: #b0b0a8;
+    margin-left: 10px; /* Отступ между датой и языковым модулем*/
+    background-color: #032A50;
+    border: 1px solid #b0b0a8;
+    border-radius: 4px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+#language-selector option {
+    background-color: #032A50;
+    color: #b0b0a8;
+}
+.user-menu {
+    position: absolute;
+    top: 1.2cm;
+    right: 0;
+    width: 7cm;
+    height: 17cm;
+    background-color: #032A50;
+    box-shadow: 2px 2px 5px rgba(5, 14, 67, 0.7);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Верхний фрейм */
+.user-menu-frame-top {
+    width: 100%;
+    height: 3cm;
+    background-color: #f0f0f0; /* Цвет фона верхнего фрейма */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование по горизонтали */
+    justify-content: center; /* Центрирование по вертикали */
+    padding: 0; /* Убираем лишние отступы */
+    text-align: center; /* Центрируем текст */
+    border-bottom: 1px solid #7d7676;
+}
+
+/* Иконка профиля */
+.user-icon {
+    width: 2.5cm;
+    height: 2.5cm;
+    border-radius: 50%; /* Круглая форма */
+    background-color: #7d7676; /* Серый фон */
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Центрирование содержимого внутри */
+    align-items: center; /* Центрирование содержимого внутри */
+    cursor: pointer; /* Указатель при наведении */
+    margin: 0 auto; /* Центрирование контейнера по горизонтали */
+}
+
+#profile-photo-frame {
+    width: 100%; /* Заполняет всю ширину контейнера */
+    height: 100%; /* Заполняет всю высоту контейнера */
+    object-fit: cover; /* Адаптивное заполнение изображения */
+    display: block; /* Убираем лишние отступы */
+    margin: auto; /* Центрирование внутри контейнера */
+}
+
+.user-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Адаптивное заполнение изображения */
+    display: block; /* Убираем лишние отступы у изображения */
+    margin: auto; /* Центрирование изображения внутри контейнера */
+}
+
+/* Логин пользователя */
+.user-login {
+    font-size: 11pt;
+    color: #b0b0a8;
+    margin: 0.5cm 0; /* Верхний и нижний отступ */
+    text-align: center; /* Центрируем текст логина */
+}
+
+/* Ссылка для редактирования профиля */
+.edit-profile-link {
+    font-size: 10pt;
+    color: #b0b0a8;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Центрируем содержимое ссылки */
+    gap: 0.3cm; /* Интервал между иконкой и текстом */
+    cursor: pointer;
+    text-align: center; /* Центрируем текст ссылки */
+}
+
+.edit-profile-link i {
+    font-size: 11pt;
+}
+
+/* Нижний фрейм */
+.user-edit-frame {
+    width: 100%;
+    height: 9cm;
+    padding: 0.5cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.user-edit-frame label {
+    color: #b0b0a8; /* Цвет текста меток */
+    font-size: 10pt; /* Размер шрифта для меток */
+    margin-bottom: 5px; /* Отступ снизу для красоты */
+    display: block; /* Каждая метка на своей строке */
+}
+
+.user-edit-frame input[type="text"],
+.user-edit-frame input[type="date"],
+.user-edit-frame input[type="file"] {
+    width: 5cm;
+    height: 0.7cm;
+    margin: 5px 0;
+    padding: 5px;
+    font-size: 10pt;
+    background-color: #97988e;/* Фон для полей ввода */
+    color: #7d7676;/* Цвет текста */
+    border: 1px solid #7d7676;/* Рамка для полей ввода */
+    border-radius: 5px; /* Скругленные углы */
+}
+
+.user-edit-frame input[type="text"]::placeholder {
+    color: #7d7676; /* Цвет текста подсказки */
+    font-size: 10pt;
+    text-align: left;
+    align-items: center;
+}
+
+.user-edit-frame button {
+    width: 5cm;
+    height: 1cm;
+    margin-top: 40px;
+    background-color: #032A50; /* Синий фон кнопки */
+    color: #97988e; /* Цвет текста кнопки SAVE*/
+    border: none;
+    border-radius: 5px; /* Скругленные углы кнопки */
+    cursor: pointer;
+}
+
+.user-edit-frame button:hover {
+    background-color: #060d5c; /* Более темный синий фон при наведении */
+}
+
+
+.right-sidebar {
+    position: fixed; /* Или absolute, в зависимости от поведения при прокрутке */
+    top: 0;
+    right: 0;
+    width: 1.0cm;
+    height: 100%;
+    background-color: #032A50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1cm 0;
+}
+
+.notification-icon, .chat-icon, .contact-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.notification-icon i, .chat-icon i, .contact-icons i {
+    font-size: 14pt;
+    color: #97988e; /* Измененный цвет иконок */
+    margin-bottom: 0.7cm; /* Интервал между иконками */
+    cursor: pointer;
+}
+
+.notification-icon i {
+    margin-top: 2cm; /* Отступ сверху для первой иконки */
+}
+
+.contact-icons {
+    margin-bottom: 2cm; /* Отступ снизу для иконок "WhatsApp, Telegram & Discord" */
+}
+
+
+.main-content {
+    margin-top: 1.5cm; /* Отступ сверху от .header */
+    margin-left: 0.0cm; /* Отступ слева от бокового меню */
+    margin-right: 0.0cm; /* Отступ справа от правой боковой панели */
+    padding: 0.5cm; /* Внутренний отступ для содержимого */
+    background-color: #97988e; /* Фон содержимого */
+    color: #032A50; /* Цвет текста */
+    flex: 1; /* Занимает оставшееся пространство */
+    /*overflow-y: auto; /* Добавляем прокрутку, если содержимое превышает высоту экрана */
+    height: 0.7cm; /* Высота модуля */
+    font-family: 'Open Sans', sans-serif; /* Шрифт Open Sans */
+    font-weight: bold; /* Жирный шрифт */
+    font-size: 11pt; /* Размер шрифта */
+}
+
+.project-menu {
+    display: flex; /* Устанавливаем флексбокс для горизонтального расположения */
+    justify-content: space-between; /* Распределяем элементы с равными отступами между ними */
+    padding-left: 1cm; /* Отступ слева 1 см */
+    padding-right: 2cm; /* Отступ справа 2 см */
+    margin-bottom: 0.6cm; /* Отступ снизу от других элементов */
+    box-sizing: border-box; /* Учитываем padding в ширине контейнера */
+}
+
+.project-menu .menu-item2:hover {
+    color: #ffffff; /* Цвет текста при наведении */
+    background-color: #032A50; /* Подсветка фона */
+    transition: 0.3s ease; /* Плавный переход */
+}
+
+
+.content {
+    margin-left: -0.5cm; /* Отступ слева от бокового меню */
+    margin-right: 0.0cm; /* Отступ справа от правой боковой панели */
+    padding: 1cm; /* Внутренний отступ для содержимого */
+    background-color: #ffffff; /* Фон содержимого */
+    color: #7d7676; /* Цвет текста */
+    overflow-y: auto; /* Добавляем прокрутку, если содержимое превышает высоту экрана */
+    height: calc(100vh - 4.5cm); /* Высота контента с учетом отступов и высоты заголовка */
+    flex: 1; /* Занимает оставшееся пространство */
+    box-sizing: border-box; /* Включаем padding и border в ширину и высоту */
+    font-family: 'Open Sans', sans-serif; /* Шрифт Open Sans */
+    font-size: 11pt; /* Размер шрифта */
+}

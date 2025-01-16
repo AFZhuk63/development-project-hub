@@ -1,0 +1,100 @@
+body {
+    background-color: #060d5c;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    margin-top: 0.0cm;
+}
+
+h1 {
+    font-size: 32pt;
+    color: #7d7676;
+    text-transform: uppercase;
+}
+
+.auth-module {
+    width: 15cm;
+    height: 10cm;
+    background-color: rgba(37, 42, 94, 0.3);
+    box-shadow: 3px 3px 0px rgba(5, 14, 67, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frame1 {
+    width: 5.6cm;
+    height: 10cm;
+    background-image: url('../images/screen_shot1.jpg');
+    background-size: cover;
+}
+
+.frame2 {
+    width: 9.4cm;
+    height: 10cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 3.5cm;
+    height: 1cm;
+    background-color: #060d5c;
+    color: #7d7676;
+    box-shadow: 3px 3px 0px rgba(5, 14, 67, 0.75);
+    font-size: 10pt;
+    text-transform: uppercase;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #252a5e;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 5cm;
+    height: 0.7cm;
+    margin: 5px;
+    padding: 5px;
+    font-size: 10pt;
+    background-color: #7d7676; /* Цвет поля ввода */
+    color: #ffffff; /* Цвет текста в поле ввода */
+    border: none;
+    border-radius: 2px;
+}
+
+.password-container {
+    position: relative;
+    width: 4.35cm;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 30px; /* Добавляем отступ справа для иконки */
+}
+
+.password-container i {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
