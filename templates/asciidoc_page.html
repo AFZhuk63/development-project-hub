@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EpicEditor Integration</title>
+    <!-- Подключение файла стилей -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Подключение стилей EpicEditor -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/epiceditor/epiceditor.css">
+</head>
+<body>
+    <h1>EpicEditor Integration</h1>
+    <div class="editor-container">
+        <div id="epiceditor"></div>
+        <button id="saveBtn">Save Changes</button>
+    </div>
+
+    <div id="output">
+        <h3>Saved HTML Output:</h3>
+        <div id="htmlOutput">No content yet.</div>
+    </div>
+
+    <!-- Подключение библиотеки EpicEditor -->
+    <script src="https://cdn.jsdelivr.net/npm/epiceditor/epiceditor.min.js"></script>
+
+    <script>
+        // Инициализация EpicEditor
+        const editor = new EpicEditor({
+            container: 'epiceditor',
+            basePath: 'https://cdn.jsdelivr.net/npm/epiceditor',
+            theme: {
+                base: '/themes/base/epiceditor.css',
+                preview: '/themes/preview/github.css',
+                editor: '/themes/editor/epic-light.css'
+            },
+            file: {
+                name: 'epiceditor',
+                defaultContent: '',
+                autoSave: false
+            }
+        }).load();
+
+        // Функция сохранения изменений
+        document.getElementById('saveBtn').addEventListener('click', function () {
+            // Получение HTML из редактора
+            const editorHTML = editor.exportFile(null, 'html');
+            // Отображение HTML на странице
+            document.getElementById('htmlOutput').innerHTML = editorHTML;
+            alert('Changes saved!');
+        });
+    </script>
+</body>
+</html>
