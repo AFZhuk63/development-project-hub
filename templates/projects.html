@@ -18,30 +18,30 @@
             <div class="menu">
                 <div class="menu-section group-1">
                     <div class="menu-item" id="menu-projects"><a href="{{ url_for('projects_page') }}">Проекты</a></div>
-                    <div class="menu-item" id="menu-admin">Администратор</div>
-                    <div class="menu-item" id="menu-list-participants">Список всех участников</div>
-                    <div class="menu-item" id="menu-list-tasks">Список всех задач</div>
+                    <div class="menu-item" id="menu-admin"><a href="{{ url_for('admin_page') }}">Администратор</a></div>
+                    <div class="menu-item" id="menu-list-participants"><a href="{{ url_for('list_all_users') }}">Список всех участников</a></div>
+                    <div class="menu-item" id="menu-list-tasks"><a href="{{ url_for('all_tasks') }}">Список всех задач</a></div>
                 </div>
                 <div class="menu-section">
                     <div class="menu-header" id="menu-admin-header">АДМИНИСТРИРОВАНИЕ</div>
                     <div class="menu-section group-2">
-                        <div class="menu-item" id="menu-add-participant">Добавить участника</div>
-                        <div class="menu-item" id="menu-remove-participant">Удалить участника</div>
-                        <div class="menu-item" id="menu-participant-list">Список участников проекта</div>
-                        <div class="menu-item" id="menu-task-manager">Менеджер задач участника</div>
-                        <div class="menu-item" id="menu-work-report">Отчёт о работе участников</div>
+                        <div class="menu-item" id="menu-add-participant"><a href="{{ url_for('add_user') }}">Добавить участника</a></div>
+                        <div class="menu-item" id="menu-remove-participant"><a href="{{ url_for('user_del') }}">Удалить участника</a></div>
+                        <div class="menu-item" id="menu-participant-list"><a href="{{ url_for('list_user_project') }}">Список участников проекта</a></div>
+                        <div class="menu-item" id="menu-task-manager"><a href="{{ url_for('task_users_manager') }}">Менеджер задач участника</a></div>
+                        <div class="menu-item" id="menu-work-report"><a href="{{ url_for('report_users') }}">Отчёт о работе участников</a></div>
                     </div>
                 </div>
                 <div class="menu-section">
                     <div class="menu-header" id="menu-my-tasks">МОИ ЗАДАЧИ</div>
                     <div class="menu-section group-3">
-                        <div class="menu-item" id="menu-view-tasks">Просмотреть список задач</div>
-                        <div class="menu-item" id="menu-add-task">Добавить задачу</div>
-                        <div class="menu-item" id="menu-set-deadline">Установить срок выполнения задачи</div>
-                        <div class="menu-item" id="menu-save-task">Сохранить задачу в файл</div>
-                        <div class="menu-item" id="menu-change-status">Изменить статус задачи</div>
-                        <div class="menu-item" id="menu-save-report">Сохранить отчёт выполненных задач</div>
-                        <div class="menu-item" id="menu-delete-task">Удалить задачу</div>
+                        <div class="menu-item" id="menu-view-tasks"><a href="{{ url_for('list_tasks_see') }}">Просмотреть список задач</a></div>
+                        <div class="menu-item" id="menu-add-task"><a href="{{ url_for('add_task') }}">Добавить задачу</a></div>
+                        <div class="menu-item" id="menu-set-deadline"><a href="{{ url_for('deadline_task') }}">Установить срок выполнения задачи</a></div>
+                        <div class="menu-item" id="menu-save-task"><a href="{{ url_for('save_task_file') }}">Сохранить задачу в файл</a></div>
+                        <div class="menu-item" id="menu-change-status"><a href="{{ url_for('change_task_status') }}">Изменить статус задачи</a></div>
+                        <div class="menu-item" id="menu-save-report"><a href="{{ url_for('save_report') }}">Сохранить отчёт выполненных задач</a></div>
+                        <div class="menu-item" id="menu-delete-task"><a href="{{ url_for('del_task') }}">Удалить задачу</a></div>
                     </div>
                 </div>
             </div>
@@ -108,337 +108,83 @@
             </div>
         </div>
 
-<!--        &lt;!&ndash; Main Content &ndash;&gt;-->
-<!--        <div class="main-content">-->
-<!--            <div class="project-menu" style="padding-left: 1cm; padding-right: 2cm;">-->
-<!--                <div class="menu-item2" id="menu-asciidoc">Asciidoc</div>-->
-<!--                <div class="menu-item2" id="menu-jira">Jira</div>-->
-<!--                <div class="menu-item2" id="menu-patterns">Patterns</div>-->
-<!--                <div class="menu-item2" id="menu-status">Статус</div>-->
-<!--                <div class="menu-item2" id="menu-timeline">Timeline</div>-->
-<!--                <div class="menu-item2" id="menu-completed">Завершённые</div>-->
-<!--            </div>-->
-<!--            <div class="content" id="content">-->
-<!--                &lt;!&ndash; Основной контент будет загружаться здесь &ndash;&gt;-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
-    <!-- Main Content -->
+        <!-- Main Content -->
         <div class="main-content">
-        <div class="project-menu" style="padding-left: 1cm; padding-right: 2cm;">
-            <!-- Ссылка Asciidoc -->
-            <div class="menu-item2" id="menu-asciidoc">
-                <a href="/asciidoc_page.html" target="content">AsciiDoc Page</a>
+            <div class="project-menu" style="padding-left: 1cm; padding-right: 2cm;">
+                <div class="menu-item2" id="menu-asciidoc">Asciidoc</div>
+                <div class="menu-item2" id="menu-jira">Jira</div>
+                <div class="menu-item2" id="menu-patterns">Patterns</div>
+                <div class="menu-item2" id="menu-status">Статус</div>
+                <div class="menu-item2" id="menu-timeline">Timeline</div>
+                <div class="menu-item2" id="menu-completed">Завершённые</div>
             </div>
-            <div class="menu-item2" id="menu-jira">Jira</div>
-            <div class="menu-item2" id="menu-patterns">Patterns</div>
-            <div class="menu-item2" id="menu-status">Статус</div>
-            <div class="menu-item2" id="menu-timeline">Timeline</div>
-            <div class="menu-item2" id="menu-completed">Завершённые</div>
-        </div>
-        <div class="content" id="content">
-            <!-- Основной контент будет загружаться здесь -->
+            <div class="content" id="content">
+                <!-- Основной контент будет загружаться здесь -->
+            </div>
         </div>
     </div>
-</div>
 
-<!--    <script>-->
-<!--    // Логика динамической загрузки содержимого для "Asciidoc"-->
-<!--    document.getElementById('asciidoc-link').addEventListener('click', function (event) {-->
-<!--        event.preventDefault(); // Отключаем стандартное поведение ссылки-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userLogo = document.getElementById('user-logo');
+            const userMenu = document.getElementById('user-menu');
 
-<!--        // Загружаем содержимое страницы asciidoc_page.html-->
-<!--        fetch('asciidoc_page.html')-->
-<!--            .then(response => {-->
-<!--                if (!response.ok) {-->
-<!--                    throw new Error('Ошибка загрузки страницы: ' + response.statusText);-->
-<!--                }-->
-<!--                return response.text();-->
-<!--            })-->
-<!--            .then(html => {-->
-<!--                // Вставляем содержимое в блок #content-->
-<!--                document.getElementById('content').innerHTML = html;-->
-<!--            })-->
-<!--            .catch(error => {-->
-<!--                console.error('Ошибка при загрузке контента:', error);-->
-<!--                document.getElementById('content').innerHTML = '<p>Не удалось загрузить контент. Попробуйте снова.</p>';-->
-<!--            });-->
-<!--    });-->
-<!--</script>-->
-
- <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Обработка кликов по ссылкам
-        document.body.addEventListener('click', function (event) {
-            const target = event.target;
-
-            // Проверяем, что это ссылка с атрибутом data-target
-            if (target.tagName === 'A' && target.hasAttribute('data-target')) {
-                event.preventDefault(); // Отключаем стандартное поведение ссылки
-
-                const url = target.getAttribute('href'); // URL для загрузки
-                const contentId = target.getAttribute('data-target'); // ID блока для загрузки
-                const contentElement = document.getElementById(contentId);
-
-                if (contentElement) {
-                    // Загружаем содержимое через fetch
-                    fetch(url, { method: 'GET', credentials: 'same-origin' })
-                        .then(response => {
-                            // Проверяем, что ответ успешен
-                            if (!response.ok) {
-                                throw new Error(`Ошибка загрузки: ${response.status} ${response.statusText}`);
-                            }
-                            // Проверяем, что это HTML
-                            const contentType = response.headers.get('Content-Type');
-                            if (!contentType || !contentType.includes('text/html')) {
-                                throw new Error('Неверный формат ответа. Ожидался HTML.');
-                            }
-                            return response.text();
-                        })
-                        .then(html => {
-                            // Вставляем содержимое в указанный блок
-                            contentElement.innerHTML = html;
-                        })
-                        .catch(error => {
-                            // Логируем ошибку и отображаем сообщение для пользователя
-                            console.error('Ошибка загрузки:', error);
-                            contentElement.innerHTML = `
-                                <div style="color: red; padding: 10px; background: #ffe5e5; border: 1px solid #ffaaaa;">
-                                    <p>Не удалось загрузить содержимое. Попробуйте снова.</p>
-                                    <p>Ошибка: ${error.message}</p>
-                                </div>`;
-                        });
-                } else {
-                    console.error(`Элемент с ID "${contentId}" не найден.`);
-                }
-            }
-        });
-    });
-</script>
-
-
-
-   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const translations = {
-            en: {
-                "menu-projects": "Projects",
-                "menu-admin": "Administrator",
-                "menu-list-participants": "List of participants",
-                "menu-list-tasks": "Free Tasks",
-                "menu-admin-header": "ADMINISTRATION",
-                "menu-add-participant": "Add Participant",
-                "menu-remove-participant": "Remove Participant",
-                "menu-participant-list": "Participant List",
-                "menu-task-manager": "Task Manager",
-                "menu-work-report": "Work Report",
-                "menu-my-tasks": "MY TASKS",
-                "menu-view-tasks": "View Task List",
-                "menu-add-task": "Add Task",
-                "menu-set-deadline": "Set Task Deadline",
-                "menu-save-task": "Save Task to File",
-                "menu-change-status": "Change Task Status",
-                "menu-save-report": "Save Task Report",
-                "menu-delete-task": "Delete Task",
-                "menu-asciidoc": "Asciidoc",
-                "menu-jira": "Jira",
-                "menu-patterns": "Patterns",
-                "menu-status": "Status",
-                "menu-timeline": "Timeline",
-                "menu-completed": "Completed",
-                "label-upload": "Upload Photo:",
-                "label-last-name": "Last Name:",
-                "label-first-name": "First Name:",
-                "label-birthdate": "Birthdate:",
-                "label-phone": "Phone:",
-                "button-save": "Save",
-                "label-edit-profile": "Edit Profile"
-            },
-            ru: {
-                "menu-projects": "Проекты",
-                "menu-admin": "Администратор",
-                "menu-list-participants": "Список всех участников",
-                "menu-list-tasks": "Свободные задачи",
-                "menu-admin-header": "АДМИНИСТРИРОВАНИЕ",
-                "menu-add-participant": "Добавить участника",
-                "menu-remove-participant": "Удалить участника",
-                "menu-participant-list": "Список участников",
-                "menu-task-manager": "Менеджер задач",
-                "menu-work-report": "Отчёт о работе",
-                "menu-my-tasks": "МОИ ЗАДАЧИ",
-                "menu-view-tasks": "Просмотреть список задач",
-                "menu-add-task": "Добавить задачу",
-                "menu-set-deadline": "Установить срок выполнения",
-                "menu-save-task": "Сохранить задачу в файл",
-                "menu-change-status": "Изменить статус задачи",
-                "menu-save-report": "Сохранить отчёт",
-                "menu-delete-task": "Удалить задачу",
-                "menu-asciidoc": "Asciidoc",
-                "menu-jira": "Jira",
-                "menu-patterns": "Patterns",
-                "menu-status": "Статус",
-                "menu-timeline": "Хронология",
-                "menu-completed": "Завершённые",
-                "label-upload": "Загрузить фото:",
-                "label-last-name": "Фамилия:",
-                "label-first-name": "Имя:",
-                "label-birthdate": "Дата рождения:",
-                "label-phone": "Телефон:",
-                "button-save": "Сохранить",
-                "label-edit-profile": "Редактировать профиль"
-            },
-            fr: {
-                "menu-projects": "Projets",
-                "menu-admin": "Administrateur",
-                "menu-list-participants": "Liste des participants",
-                "menu-list-tasks": "Tâches libres",
-                "menu-admin-header": "ADMINISTRATION",
-                "menu-add-participant": "Ajouter un participant",
-                "menu-remove-participant": "Supprimer un participant",
-                "menu-participant-list": "Liste des participants",
-                "menu-task-manager": "Gestionnaire de tâches",
-                "menu-work-report": "Rapport de travail",
-                "menu-my-tasks": "MES TÂCHES",
-                "menu-view-tasks": "Voir la liste des tâches",
-                "menu-add-task": "Ajouter une tâche",
-                "menu-set-deadline": "Définir une échéance",
-                "menu-save-task": "Enregistrer la tâche dans un fichier",
-                "menu-change-status": "Modifier le statut de la tâche",
-                "menu-save-report": "Enregistrer le rapport des tâches",
-                "menu-delete-task": "Supprimer la tâche",
-                "menu-project": "Asciidoc",
-                "menu-jira": "Jira",
-                "menu-patterns": "Patterns",
-                "menu-status": "Statut",
-                "menu-timeline": "Chronologie",
-                "menu-completed": "Terminées",
-                "label-upload": "Télécharger une photo:",
-                "label-last-name": "Nom:",
-                "label-first-name": "Prénom:",
-                "label-birthdate": "Date de naissance:",
-                "label-phone": "Téléphone:",
-                "button-save": "Sauvegarder",
-                "label-edit-profile": "Modifier le profil"
-            },
-            de: {
-                "menu-projects": "Projekte",
-                "menu-admin": "Administrator",
-                "menu-list-participants": "Liste der Teilnehmer",
-                "menu-list-tasks": "Freie Aufgaben",
-                "menu-admin-header": "VERWALTUNG",
-                "menu-add-participant": "Teilnehmer hinzufügen",
-                "menu-remove-participant": "Teilnehmer entfernen",
-                "menu-participant-list": "Teilnehmerliste",
-                "menu-task-manager": "Aufgabenmanager",
-                "menu-work-report": "Arbeitsbericht",
-                "menu-my-tasks": "MEINE AUFGABEN",
-                "menu-view-tasks": "Aufgabenliste anzeigen",
-                "menu-add-task": "Aufgabe hinzufügen",
-                "menu-set-deadline": "Frist festlegen",
-                "menu-save-task": "Aufgabe in Datei speichern",
-                "menu-change-status": "Aufgabenstatus ändern",
-                "menu-save-report": "Bericht speichern",
-                "menu-delete-task": "Aufgabe löschen",
-                "menu-project": "Projekt",
-                "menu-participants": "Teilnehmer",
-                "menu-tasks": "Aufgaben",
-                "menu-status": "Status",
-                "menu-timeline": "Zeitplan",
-                "menu-completed": "Abgeschlossen",
-                "label-upload": "Foto hochladen:",
-                "label-last-name": "Nachname:",
-                "label-first-name": "Vorname:",
-                "label-birthdate": "Geburtsdatum:",
-                "label-phone": "Telefon:",
-                "button-save": "Speichern",
-                "label-edit-profile": "Profil bearbeiten"
-            }
-        };
-
-        const languageSelector = document.getElementById('language-selector');
-
-        function updateLanguage(language) {
-            const keys = translations[language];
-            for (const key in keys) {
-                const element = document.getElementById(key);
-                if (element) {
-                    element.textContent = keys[key];
-                }
-            }
-        }
-
-        updateLanguage('en');
-
-        languageSelector.addEventListener('change', function() {
-            const selectedLanguage = languageSelector.value;
-            updateLanguage(selectedLanguage);
-        });
-
-        function updateTimeAndDate() {
-            const now = new Date();
-            const hours = now.getHours().toString().padStart(2, '0');
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            const day = now.getDate().toString().padStart(2, '0');
-            const month = (now.getMonth() + 1).toString().padStart(2, '0');
-            const year = now.getFullYear();
-
-            const daysOfWeek = {
-                en: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-                ru: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
-                de: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
-                fr: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
-            };
-
-            const selectedLanguage = document.getElementById('language-selector').value;
-            const dayOfWeek = daysOfWeek[selectedLanguage][now.getDay()];
-
-            document.getElementById('current-time').textContent = `${hours}:${minutes}`;
-            document.getElementById('current-date').textContent = `${day}.${month}.${year}`;
-            document.getElementById('current-day').textContent = dayOfWeek;
-        }
-
-        setInterval(updateTimeAndDate, 1000);
-        updateTimeAndDate();
-
-        const userLogo = document.getElementById('user-logo');
-        const userMenu = document.getElementById('user-menu');
-
-        userLogo.addEventListener('click', function(event) {
-            event.stopPropagation();
-            userMenu.style.display = userMenu.style.display === 'block' ? 'none' : 'block';
-        });
-
-        document.addEventListener('click', function(event) {
-            if (!userLogo.contains(event.target) && !userMenu.contains(event.target)) {
-                userMenu.style.display = 'none';
-            }
-        });
-
-        const editProfileLink = document.getElementById('edit-profile');
-        const userEditFrame = document.getElementById('user-edit-frame');
-
-        editProfileLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            userEditFrame.style.display = userEditFrame.style.display === 'block' ? 'none' : 'block';
-        });
-
-        document.addEventListener('click', function(event) {
-            if (!userEditFrame.contains(event.target) && !editProfileLink.contains(event.target)) {
-                userEditFrame.style.display = 'none';
-            }
-        });
-
-        // Load content into the frame
-        document.querySelectorAll('.menu-item a').forEach(function(link) {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                fetch(link.href)
-                    .then(response => response.text())
-                    .then(html => {
-                        document.getElementById('content').innerHTML = html;
-                    });
+            userLogo.addEventListener('click', function(event) {
+                event.stopPropagation();
+                userMenu.style.display = userMenu.style.display === 'block' ? 'none' : 'block';
             });
+
+            document.addEventListener('click', function(event) {
+                if (!userLogo.contains(event.target) && !userMenu.contains(event.target)) {
+                    userMenu.style.display = 'none';
+                }
+            });
+
+            const editProfileLink = document.getElementById('edit-profile');
+            const userEditFrame = document.getElementById('user-edit-frame');
+
+            editProfileLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                userEditFrame.style.display = userEditFrame.style.display === 'block' ? 'none' : 'block';
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!userEditFrame.contains(event.target) && !editProfileLink.contains(event.target)) {
+                    userEditFrame.style.display = 'none';
+                }
+            });
+
+            // Load content into the frame
+            document.querySelectorAll('.menu-item a').forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    fetch(link.href)
+                        .then(response => response.text())
+                        .then(html => {
+                            document.getElementById('content').innerHTML = html;
+                        });
+                });
+            });
+
+            function updateTimeAndDate() {
+                const now = new Date();
+                const hours = now.getHours().toString().padStart(2, '0');
+                const minutes = now.getMinutes().toString().padStart(2, '0');
+                const day = now.getDate().toString().padStart(2, '0');
+                const month = (now.getMonth() + 1).toString().padStart(2, '0');
+                const year = now.getFullYear();
+
+                const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                const dayOfWeek = daysOfWeek[now.getDay()];
+
+                document.getElementById('current-time').textContent = `${hours}:${minutes}`;
+                document.getElementById('current-date').textContent = `${day}.${month}.${year}`;
+                document.getElementById('current-day').textContent = dayOfWeek;
+            }
+
+            setInterval(updateTimeAndDate, 1000);
+            updateTimeAndDate();
         });
-    });
-</script>
+    </script>
+</body>
+</html>

@@ -63,18 +63,81 @@ def login():
 def projects():
     if 'user' not in session:
         return redirect(url_for('index'))
-    return render_template('projects.html')
+    now = datetime.now()
+    formatted_date = now.strftime('%Y-%m-%d')  # Год-месяц-день
+    formatted_time = now.strftime('%H:%M:%S')  # Часы:минуты:секунды
+    day_of_week = now.strftime('%A')  # День недели (например, Monday)
 
+    return render_template(
+        'projects.html',
+        date=formatted_date,
+        time=formatted_time,
+        day_of_week=day_of_week
+    )
 
 @app.route('/projects_page')
 def projects_page():
     return render_template('projects_page.html')
 
+@app.route('/admin_page')
+def admin_page():
+    return render_template('admin_page.html')
 
-@app.route('/asciidoc')
-def asciidoc():
-    return render_template('asciidoc_page.html')
+@app.route('/list_all_users')
+def list_all_users():
+    return render_template('list_all_users.html')
 
+@app.route('/all_tasks')
+def all_tasks():
+    return render_template('all_tasks.html')
+
+@app.route('/add_user')
+def add_user():
+    return render_template('add_user.html')
+
+@app.route('/user_del')
+def user_del():
+    return render_template('user_del.html')
+
+@app.route('/list_user_project')
+def list_user_project():
+    return render_template('list_user_project.html')
+
+@app.route('/task_users_manager')
+def task_users_manager():
+    return render_template('task_users_manager.html')
+
+@app.route('/report_users')
+def report_users():
+    return render_template('report_users.html')
+
+@app.route('/list_tasks_see')
+def list_tasks_see():
+    return render_template('list_tasks_see.html')
+
+@app.route('/add_task')
+def add_task():
+    return render_template('add_task.html')
+
+@app.route('/deadline_task')
+def deadline_task():
+    return render_template('deadline_task.html')
+
+@app.route('/save_task_file')
+def save_task_file():
+    return render_template('save_task_file.html')
+
+@app.route('/change_task_status')
+def change_task_status():
+    return render_template('change_task_status.html')
+
+@app.route('/save_report')
+def save_report():
+    return render_template('save_report.html')
+
+@app.route('/del_task')
+def del_task():
+    return render_template('del_task.html')
 
 # Директории для пользователей и архива
 USERS_FOLDER = 'Users'

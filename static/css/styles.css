@@ -137,7 +137,7 @@ input {
 .menu-header {
     font-size: 10pt;
     font-weight: bold;
-    color: #7d7676;
+    color: #b0b0a8;
     margin-bottom: 0.2cm; /* Уменьшение нижнего отступа */
     line-height: 0.5; /* Уменьшение межстрочного интервала */
     text-align: center; /* Центрируем заголовки */
@@ -152,7 +152,7 @@ input {
 .menu-header {
     font-size: 10pt;
     font-weight: bold;
-    color: #7d7676;
+    color: #b0b0a8;
     margin-bottom: 0.5cm; /* Отступ под заголовком */
     text-align: left;
     margin-left: 1cm; /* Отступ слева 1 см */
@@ -169,8 +169,8 @@ input {
 .menu-item {
     font-size: 10pt;
     color: #97988e;
-    margin-bottom: 0.3cm; /* Отступ между элементами внутри группы */
-    padding: 0.3cm;
+    margin-bottom: 0.2cm; /* Отступ между элементами внутри группы */
+    padding: 0.3cm; /* Внутренний отступ */
     line-height: 0.0; /* Межстрочный интервал для заголовков в две строки */
     text-align: left;
     word-break: break-word; /* Перенос слов, если необходимо */
