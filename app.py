@@ -71,6 +71,11 @@ def projects_page():
     return render_template('projects_page.html')
 
 
+@app.route('/asciidoc')
+def asciidoc():
+    return render_template('asciidoc_page.html')
+
+
 # Директории для пользователей и архива
 USERS_FOLDER = 'Users'
 ARCHIVE_FOLDER = 'Archive'

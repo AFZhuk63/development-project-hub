@@ -481,7 +481,7 @@ input {
 
 .content {
     margin-left: -0.5cm; /* Отступ слева от бокового меню */
-    margin-right: 0.0cm; /* Отступ справа от правой боковой панели */
+    margin-right: 0.5cm; /* Отступ справа от правой боковой панели */
     padding: 1cm; /* Внутренний отступ для содержимого */
     background-color: #ffffff; /* Фон содержимого */
     color: #7d7676; /* Цвет текста */
@@ -491,4 +491,41 @@ input {
     box-sizing: border-box; /* Включаем padding и border в ширину и высоту */
     font-family: 'Open Sans', sans-serif; /* Шрифт Open Sans */
     font-size: 11pt; /* Размер шрифта */
+}
+
+/* Стили для контейнера редактора */
+.editor-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;
+}
+
+/* Стили для кнопок */
+/*button {*/
+/*    margin-top: 10px;*/
+/*    padding: 10px 20px;*/
+/*    background-color: #4CAF50;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*button:hover {*/
+/*    background-color: #45a049;*/
+/*}*/
+
+/* Стили для отображения сохранённого HTML */
+#output {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+#htmlOutput {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color: #333;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }

@@ -108,21 +108,116 @@
             </div>
         </div>
 
-        <!-- Main Content -->
+<!--        &lt;!&ndash; Main Content &ndash;&gt;-->
+<!--        <div class="main-content">-->
+<!--            <div class="project-menu" style="padding-left: 1cm; padding-right: 2cm;">-->
+<!--                <div class="menu-item2" id="menu-asciidoc">Asciidoc</div>-->
+<!--                <div class="menu-item2" id="menu-jira">Jira</div>-->
+<!--                <div class="menu-item2" id="menu-patterns">Patterns</div>-->
+<!--                <div class="menu-item2" id="menu-status">Статус</div>-->
+<!--                <div class="menu-item2" id="menu-timeline">Timeline</div>-->
+<!--                <div class="menu-item2" id="menu-completed">Завершённые</div>-->
+<!--            </div>-->
+<!--            <div class="content" id="content">-->
+<!--                &lt;!&ndash; Основной контент будет загружаться здесь &ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <!-- Main Content -->
         <div class="main-content">
-            <div class="project-menu" style="padding-left: 1cm; padding-right: 2cm;">
-                <div class="menu-item2" id="menu-asciidoc">Asciidoc</div>
-                <div class="menu-item2" id="menu-jira">Jira</div>
-                <div class="menu-item2" id="menu-patterns">Patterns</div>
-                <div class="menu-item2" id="menu-status">Статус</div>
-                <div class="menu-item2" id="menu-timeline">Timeline</div>
-                <div class="menu-item2" id="menu-completed">Завершённые</div>
+        <div class="project-menu" style="padding-left: 1cm; padding-right: 2cm;">
+            <!-- Ссылка Asciidoc -->
+            <div class="menu-item2" id="menu-asciidoc">
+                <a href="/asciidoc_page.html" target="content">AsciiDoc Page</a>
             </div>
-            <div class="content" id="content">
-                <!-- Основной контент будет загружаться здесь -->
-            </div>
+            <div class="menu-item2" id="menu-jira">Jira</div>
+            <div class="menu-item2" id="menu-patterns">Patterns</div>
+            <div class="menu-item2" id="menu-status">Статус</div>
+            <div class="menu-item2" id="menu-timeline">Timeline</div>
+            <div class="menu-item2" id="menu-completed">Завершённые</div>
+        </div>
+        <div class="content" id="content">
+            <!-- Основной контент будет загружаться здесь -->
         </div>
     </div>
+</div>
+
+<!--    <script>-->
+<!--    // Логика динамической загрузки содержимого для "Asciidoc"-->
+<!--    document.getElementById('asciidoc-link').addEventListener('click', function (event) {-->
+<!--        event.preventDefault(); // Отключаем стандартное поведение ссылки-->
+
+<!--        // Загружаем содержимое страницы asciidoc_page.html-->
+<!--        fetch('asciidoc_page.html')-->
+<!--            .then(response => {-->
+<!--                if (!response.ok) {-->
+<!--                    throw new Error('Ошибка загрузки страницы: ' + response.statusText);-->
+<!--                }-->
+<!--                return response.text();-->
+<!--            })-->
+<!--            .then(html => {-->
+<!--                // Вставляем содержимое в блок #content-->
+<!--                document.getElementById('content').innerHTML = html;-->
+<!--            })-->
+<!--            .catch(error => {-->
+<!--                console.error('Ошибка при загрузке контента:', error);-->
+<!--                document.getElementById('content').innerHTML = '<p>Не удалось загрузить контент. Попробуйте снова.</p>';-->
+<!--            });-->
+<!--    });-->
+<!--</script>-->
+
+ <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Обработка кликов по ссылкам
+        document.body.addEventListener('click', function (event) {
+            const target = event.target;
+
+            // Проверяем, что это ссылка с атрибутом data-target
+            if (target.tagName === 'A' && target.hasAttribute('data-target')) {
+                event.preventDefault(); // Отключаем стандартное поведение ссылки
+
+                const url = target.getAttribute('href'); // URL для загрузки
+                const contentId = target.getAttribute('data-target'); // ID блока для загрузки
+                const contentElement = document.getElementById(contentId);
+
+                if (contentElement) {
+                    // Загружаем содержимое через fetch
+                    fetch(url, { method: 'GET', credentials: 'same-origin' })
+                        .then(response => {
+                            // Проверяем, что ответ успешен
+                            if (!response.ok) {
+                                throw new Error(`Ошибка загрузки: ${response.status} ${response.statusText}`);
+                            }
+                            // Проверяем, что это HTML
+                            const contentType = response.headers.get('Content-Type');
+                            if (!contentType || !contentType.includes('text/html')) {
+                                throw new Error('Неверный формат ответа. Ожидался HTML.');
+                            }
+                            return response.text();
+                        })
+                        .then(html => {
+                            // Вставляем содержимое в указанный блок
+                            contentElement.innerHTML = html;
+                        })
+                        .catch(error => {
+                            // Логируем ошибку и отображаем сообщение для пользователя
+                            console.error('Ошибка загрузки:', error);
+                            contentElement.innerHTML = `
+                                <div style="color: red; padding: 10px; background: #ffe5e5; border: 1px solid #ffaaaa;">
+                                    <p>Не удалось загрузить содержимое. Попробуйте снова.</p>
+                                    <p>Ошибка: ${error.message}</p>
+                                </div>`;
+                        });
+                } else {
+                    console.error(`Элемент с ID "${contentId}" не найден.`);
+                }
+            }
+        });
+    });
+</script>
+
+
 
    <script>
     document.addEventListener('DOMContentLoaded', function() {
